@@ -21,6 +21,8 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+    <!-- import googleAPI -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -30,8 +32,8 @@
     <div class="header">
       <h3 class="logo">keepBallin</h3>
       <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="court.html">Courts</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="court.html">Courts</a></li>
         <li><a href="#">Events</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">Profile</a></li>
@@ -39,39 +41,11 @@
     </div>
 
     <div class="container">
-      <div class="jumbotron">
-        <div class="greeting">
-          <h1>只想打球</h1>
-          <p class="lead">有這麼難嗎？</p>  
-        </div>
-      </div>
-
-      <div class="row marketing scrollEffect fadeInUp">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-          
-        </div>
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-          
+      <div class="row map">
+        <div class="col-lg-8">
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+          <div id = "myMap"></div>
+          <button id = "locateBtn" class = "Btn">我在哪？</button>
         </div>
       </div>
 
@@ -119,7 +93,8 @@
     
     <!-- wowjs should be concat and minized later -->
     <script src="scripts/wow.min.js"></script>
-    <!-- wowjs should be concat and minized later -->
+    <!-- js for googleMap -->
+    <script src="scripts/map.js"></script>
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
