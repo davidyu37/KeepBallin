@@ -22,22 +22,37 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+<body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    <div class="header">
-      <h3 class="logo">keepBallin</h3>
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="court.html">Courts</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Profile</a></li>
-      </ul>
+  <nav class="navbar navbar-inverse navbar-fixed-top header">
+    <div>
+      <div class="nav-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>   
+        </button>
+        <a class="navbar-brand" href="#">
+          <h3 class="logo" id="mobileLogo">keepBallin</h3>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar">
+        <a class="navbar-brand" href="#">
+          <h3 class="logo" id="desktopLogo">keepBallin</h3>
+        </a>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="index.html">首頁</a></li>
+          <li><a href="court.html">球場</a></li>
+          <li><a href="#">活動</a></li>
+          <li><a href="#">聯絡</a></li>
+          <li><a href="#">註冊</a></li>
+        </ul>
+      </div>  
     </div>
-
+  </nav>
     <div class="container">
       <div class="jumbotron">
         <div class="greeting">
@@ -116,14 +131,12 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
-    
+    <script src="scripts/scroll.js"></script>
     <!-- wowjs should be concat and minized later -->
     <script src="scripts/wow.min.js"></script>
-    <!-- wowjs should be concat and minized later -->
-
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
 
-  </body>
+</body>
 </html>
