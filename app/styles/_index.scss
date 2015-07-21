@@ -1,0 +1,47 @@
+
+
+/* Main marketing message */
+.jumbotron {
+  text-align: center;
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+  @media screen and (max-width: $screen-sm-min) {
+    margin-bottom: 0;
+  }
+}
+.greeting {
+  color: white;
+  text-align: left;
+  padding-left: 15px;
+  margin: 25% 0;
+  @media (max-width: 400px) {
+    text-align: center;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* weather display */
+.weatherBox {
+  border: 3px solid $brand-primary;
+  padding: 5px;
+  text-align: center;
+  border-radius: 25px;
+  .panel-heading {
+    border-radius: 25px 25px 0 0;
+  }
+  ul li {  
+    list-style: none;
+    font-size: 2em;
+  }
+}
+
+

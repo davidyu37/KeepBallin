@@ -5,15 +5,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>keepBallin</title>
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
-
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -21,8 +15,9 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+    
   </head>
-<body>
+<body ng-app="keepBallin">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -44,11 +39,11 @@
           <h3 class="logo" id="desktopLogo">keepBallin</h3>
         </a>
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="index.html">首頁</a></li>
+          <li class="active"><a href="/">首頁</a></li>
           <li><a href="court.html">球場</a></li>
           <li><a href="#">活動</a></li>
           <li><a href="#">聯絡</a></li>
-          <li><a href="#">註冊</a></li>
+          <li><a class="glyphicon glyphicon-user" href="#">註冊/登入</a></li>
         </ul>
       </div>  
     </div>
@@ -56,24 +51,27 @@
     <div class="container">
       <div class="jumbotron">
         <div class="greeting">
-          <h1>只想打球</h1>
-          <p class="lead">有這麼難嗎？</p>  
+          <h1>找場，找朋友，打球</h1>
+          <p class="lead">有這麼難嗎？</p>
+          <button type="button" class="btn btn-primary">走啊</button>  
         </div>
       </div>
 
-      <div class="row marketing scrollEffect fadeInUp">
+      <div class="row scrollEffect fadeInUp">
         <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-          
+          <div class="weatherBox panel panel-primary" ng-controller="weatherController as weatherCtrl">
+            <div class="panel-heading">
+              <h3>台北天氣狀況</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="list-group">
+                <li class="glyphicon glyphicon-cloud list-group-item">{{weatherCtrl.dat.weather[0].description}}</li class="list-group-item">
+                <li class="list-group-item">{{weatherCtrl.dat.main.temp}}&deg;C</li>
+                <li class="list-group-item">白天</li>
+                <li class="list-group-item">降雨機率30%</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="col-lg-6">
           <h4>HTML5 Boilerplate</h4>
@@ -92,24 +90,24 @@
 
       <div class="footer">
         <ul>
-          <li><a href=""></a>Home</li>
-          <li><a href=""></a>Courts</li>
-          <li><a href=""></a>Events</li>
-          <li><a href=""></a>Contact</li>
-          <li><a href=""></a>Profile</li>
+          <li><a href="index.html"></a>首頁</li>
+          <li><a href="#"></a>球場</li>
+          <li><a href="#"></a>活動</li>
+          <li><a href="#"></a>聯絡</li>
+          <li><a href="#"></a>註冊</li>
         </ul>  
       </div>
     </div>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
+    <!--<script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
       e=o.createElement(i);r=o.getElementsByTagName(i)[0];
       e.src='https://www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+    </script> -->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -131,12 +129,18 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
+    <!-- scroll.js hides navbar on up scroll -->
     <script src="scripts/scroll.js"></script>
     <!-- wowjs should be concat and minized later -->
     <script src="scripts/wow.min.js"></script>
+    <!-- build:js scripts/weather.js -->
+    <!-- <script src="scripts/forecastWeather.js"></script> -->
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+    
 
 </body>
 </html>
