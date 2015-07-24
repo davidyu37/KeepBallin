@@ -8,7 +8,7 @@
     padding: 14px 24px;
   }
   @media screen and (max-width: $screen-sm-min) {
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 }
 .greeting {
@@ -31,16 +31,18 @@
 
 /* weather display */
 .weatherBox {
+  margin: 5px 20px;
   border: 3px solid $brand-primary;
   padding: 5px;
   text-align: center;
   border-radius: 25px;
   .panel-heading {
+    font-size: 2em;
     border-radius: 25px 25px 0 0;
   }
   ul li {  
     list-style: none;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 

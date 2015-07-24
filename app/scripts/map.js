@@ -107,7 +107,7 @@ var courtLocation = [
     ['建安國小', 25.029043, 121.547022]
 ];
 
-function init() {
+function mapInit() {
 	var markers =[];
 	var mapDiv = document.getElementById('myMap');
 	var mapOption = {
@@ -278,4 +278,5 @@ function handleNoGeolocation(errorFlag) {
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
-window.onload = init;
+window.onload = mapInit;
+// $('#court').click(mapInit());

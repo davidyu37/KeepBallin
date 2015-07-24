@@ -44,7 +44,7 @@
 }
 /* overwrite the default colors for .navbar inverse*/
 .navbar-inverse .navbar-nav > li > a {
-  color: white;
+  color: black;
   transition: 0.5s;
   &:hover {
     color: $brand-primary;
@@ -53,13 +53,19 @@
   }
 }
 /* align text to center for mobile view */
-.nav {
-  text-align: center;
+.nav > li > a {
+  @media screen and (max-width: $screen-sm-min) {
+    text-align: center;
+    padding-left: 30px;
+    border-bottom: 1px solid black;
+  }
 }
+
 
 .navbar-nav {
   margin: 0;
 }
+
 
 /* Logo here */
 

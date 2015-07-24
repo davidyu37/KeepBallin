@@ -1,13 +1,25 @@
 (function(){
-	var app = angular.module('keepBallin', []);
+	var app = angular.module('keepBallin', ['ui.router'])
+	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+		$urlRouterProvider.otherwise('/');
+		$stateProvider
+			.state('home', {
+				url: '/',
+				templateUrl: 'templates/home.html'
+			})
+			.state('court', {
+				url: '/court',
+				templateUrl: 'templates/court.html'
+			})
+	}]);
 	
 	app.controller('weatherController', ['$http', function($http){
 		var originalData = this;
-		originalData.dat = [];
+		originalData.now = [];
 		$http.get('http://api.openweathermap.org/data/2.5/weather?q=taipei,tw&units=metric&lang=zh_tw').
 		success(function(data, status, headers, config) {
 	    	console.log(data);
-	    	originalData.dat = data;
+	    	originalData.now = data;
 	  	}).
   		error(function(data, status, headers, config) {
 	    // called asynchronously if an error occurs

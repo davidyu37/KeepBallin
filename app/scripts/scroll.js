@@ -22,9 +22,10 @@ function hasScrolled() {
 	if(Math.abs(lastScrollTop - st) <= delta)
         return;
   	// If current position > last position AND scrolled past navbar...
-	if (st > lastScrollTop){
+	if (st > lastScrollTop && st > 50){
 	  // Scroll Down
 	  $('.header').addClass('header-up');
+	  $('.navbar-collapse').removeClass('in');
 	} else {
       // Scroll Up  
       $('.header').removeClass('header-up'); 

@@ -1,0 +1,35 @@
+<div class="row scrollEffect fadeInUp">
+  <div class="col-sm-6 col-md-3">
+    <div class="weatherBox panel panel-primary" ng-controller="weatherController as weatherCtrl">
+      <div class="panel-heading">
+        <h3>台北天氣狀況</h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="glyphicon glyphicon-cloud list-group-item">{{weatherCtrl.now.weather[0].description}}</li class="list-group-item">
+          <li class="list-group-item">{{weatherCtrl.now.main.temp}}&deg;C</li>
+          <li class="list-group-item">白天</li>
+          <li class="list-group-item">降雨機率30%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <h4>HTML5 Boilerplate</h4>
+    <p>
+      HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+    </p>
+    <h4>Sass</h4>
+    <p>
+      Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
+    </p>
+    <h4>Bootstrap</h4>
+    <p>
+      Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
+    </p>
+    <h4>Modernizr</h4>
+    <p>
+      Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.
+    </p>
+  </div>
+</div>

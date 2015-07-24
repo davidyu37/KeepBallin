@@ -15,89 +15,25 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+    <!-- import googleAPI -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
     
   </head>
 <body ng-app="keepBallin">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-  <nav class="navbar navbar-inverse navbar-fixed-top header">
-    <div>
-      <div class="nav-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>   
-        </button>
-        <a class="navbar-brand" href="#">
-          <h3 class="logo" id="mobileLogo">keepBallin</h3>
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar">
-        <a class="navbar-brand" href="#">
-          <h3 class="logo" id="desktopLogo">keepBallin</h3>
-        </a>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/">首頁</a></li>
-          <li><a href="court.html">球場</a></li>
-          <li><a href="#">活動</a></li>
-          <li><a href="#">聯絡</a></li>
-          <li><a class="glyphicon glyphicon-user" href="#">註冊/登入</a></li>
-        </ul>
-      </div>  
+  <header ng-include="'templates/nav.html'"></header>
+  <div class="jumbotron">
+    <div class="greeting">
+      <h1>找場，找朋友，打球</h1>
+      <p class="lead">有這麼難嗎？</p>
+      <button type="button" class="btn btn-primary">走啊</button>
     </div>
-  </nav>
-    <div class="container">
-      <div class="jumbotron">
-        <div class="greeting">
-          <h1>找場，找朋友，打球</h1>
-          <p class="lead">有這麼難嗎？</p>
-          <button type="button" class="btn btn-primary">走啊</button>  
-        </div>
-      </div>
+  </div>
+  <div class="container" ui-view></div>
+  <footer ng-include="'templates/footer.html'"></footer>
 
-      <div class="row scrollEffect fadeInUp">
-        <div class="col-lg-6">
-          <div class="weatherBox panel panel-primary" ng-controller="weatherController as weatherCtrl">
-            <div class="panel-heading">
-              <h3>台北天氣狀況</h3>
-            </div>
-            <div class="panel-body">
-              <ul class="list-group">
-                <li class="glyphicon glyphicon-cloud list-group-item">{{weatherCtrl.dat.weather[0].description}}</li class="list-group-item">
-                <li class="list-group-item">{{weatherCtrl.dat.main.temp}}&deg;C</li>
-                <li class="list-group-item">白天</li>
-                <li class="list-group-item">降雨機率30%</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-          
-        </div>
-      </div>
-
-      <div class="footer">
-        <ul>
-          <li><a href="index.html"></a>首頁</li>
-          <li><a href="#"></a>球場</li>
-          <li><a href="#"></a>活動</li>
-          <li><a href="#"></a>聯絡</li>
-          <li><a href="#"></a>註冊</li>
-        </ul>  
-      </div>
-    </div>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!--<script>
@@ -112,6 +48,9 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -133,12 +72,13 @@
     <script src="scripts/scroll.js"></script>
     <!-- wowjs should be concat and minized later -->
     <script src="scripts/wow.min.js"></script>
+    <!-- js for googleMap -->
+    <script src="scripts/map.js"></script>
     <!-- build:js scripts/weather.js -->
     <!-- <script src="scripts/forecastWeather.js"></script> -->
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-    <script src="scripts/angular.min.js"></script>
     <script src="scripts/app.js"></script>
     
 
