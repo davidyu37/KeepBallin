@@ -61,16 +61,18 @@
     span {
       bottom: 0px;
       padding-right: 5px;
+      position: relative;
       top: 0;
     }
   }
 }
 /* the spans hold the glyphicon */
 .navbar-nav {
+  position: relative;
   margin: 0;
   span{
     /* overwrite glyphicon class's default positioning and line height */
-    position: relative;
+    position: absolute;
     top: -9999px;
     line-height: 0;
     transition: 0.4s;

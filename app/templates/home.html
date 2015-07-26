@@ -4,22 +4,20 @@
     <p class="lead">有這麼難嗎？</p>
     <button type="button" class="btn btn-primary">走啊</button>
   </div>
+  <div id="weatherBox"class="panel panel-primary" ng-controller="weatherController as weatherCtrl">
+    <span class="weatherLocation">
+      <h2>台北</h2>
+    </span>
+    <button id="weatherTimeBtn" class="btn-primary pull-right">現在</button>
+    <div class="panel-body">
+      <p id="temperature">{{weatherCtrl.now.main.temp}}&deg;C</p>
+      <p>{{weatherCtrl.now.weather[0].description}}</p>
+    </div>
+    </div>  
 </div>
 <div class="row scrollEffect fadeInUp">
   <div class="col-sm-6 col-md-3">
-    <div class="weatherBox panel panel-primary" ng-controller="weatherController as weatherCtrl">
-      <div class="panel-heading">
-        <h3>台北天氣狀況</h3>
-      </div>
-      <div class="panel-body">
-        <ul class="list-group">
-          <li class="glyphicon glyphicon-cloud list-group-item">{{weatherCtrl.now.weather[0].description}}</li class="list-group-item">
-          <li class="list-group-item">{{weatherCtrl.now.main.temp}}&deg;C</li>
-          <li class="list-group-item">白天</li>
-          <li class="list-group-item">降雨機率30%</li>
-        </ul>
-      </div>
-    </div>
+    
   </div>
   <div class="col-lg-6">
     <h4>HTML5 Boilerplate</h4>
