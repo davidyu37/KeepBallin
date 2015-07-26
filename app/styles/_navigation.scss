@@ -6,7 +6,7 @@
 .header {
   z-index: 10;
   width: 100%;
-  height: 50px;
+  height: auto;
   border: none;
   margin: 0;
   background-color: rgba(0,0,0,0.8);
@@ -45,11 +45,35 @@
 /* overwrite the default colors for .navbar inverse*/
 .navbar-inverse .navbar-nav > li > a {
   color: black;
-  transition: 0.5s;
+  @media screen and (min-width: $screen-sm-min) {
+    height: 75px;
+    width: 125px;
+    font-size: 16pt;
+    text-align: center;
+    padding-top: 30px;
+  }
+  transition: 0.4s;
   &:hover {
     color: $brand-primary;
     background-color: white;
     font-size: 20pt;
+    border-bottom: 10px solid $brand-primary;
+    span {
+      bottom: 0px;
+      padding-right: 5px;
+      top: 0;
+    }
+  }
+}
+/* the spans hold the glyphicon */
+.navbar-nav {
+  margin: 0;
+  span{
+    /* overwrite glyphicon class's default positioning and line height */
+    position: relative;
+    top: -9999px;
+    line-height: 0;
+    transition: 0.4s;
   }
 }
 /* align text to center for mobile view */
@@ -61,17 +85,13 @@
   }
 }
 
-
-.navbar-nav {
-  margin: 0;
-}
-
-
 /* Logo here */
 
 .logo {
   color: white;
   margin: 0;
+  font-size: 20pt;
+
 }
 #mobileLogo {
   color: $brand-primary;
@@ -82,7 +102,7 @@
 #desktopLogo {
   position: absolute;
   left: 15px;
-  top: 10px;
+  top:  25px;
   @media screen and (max-width: $screen-sm-min) {
     display: none;
   }

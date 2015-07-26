@@ -9,7 +9,16 @@
 			})
 			.state('court', {
 				url: '/court',
-				templateUrl: 'templates/court.html'
+				templateUrl: 'templates/court.html',
+				onEnter: function() {loadScript()}
+			})
+			.state('event', {
+				url: '/event',
+				templateUrl: 'templates/event.html'
+			})
+			.state('contact', {
+				url: '/contact',
+				templateUrl: 'templates/contact.html'
 			})
 	}]);
 	
@@ -25,8 +34,6 @@
 	    // called asynchronously if an error occurs
 	    // or server returns response with an error status.
 	  	});
-
-		
 	}]); //weather controller ends here
 	
 })(); //self-enclosed function ends here

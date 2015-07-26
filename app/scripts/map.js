@@ -1,6 +1,5 @@
 var map;
-//center is set at 捷運大安站
-var mapCenter = new google.maps.LatLng(25.033259, 121.543565);
+
 //polyline coordinates for 大安區
 var daAnDistrict = [
     [25.008161, 121.565985],
@@ -107,13 +106,16 @@ var courtLocation = [
     ['建安國小', 25.029043, 121.547022]
 ];
 
-function mapInit() {
+function init() {
 	var markers =[];
 	var mapDiv = document.getElementById('myMap');
 	var mapOption = {
-		center: mapCenter,
+    //center is set at 捷運大安站
+		center: new google.maps.LatLng(25.033259, 121.543565),
 		zoom: 15,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+    panControl: true,
+    scrollwheel: false
 	};
 	map = new google.maps.Map(mapDiv, mapOption);
 
@@ -232,10 +234,11 @@ function mapInit() {
   //put the button on the map with the position of bottom center
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(locateButton);
 }
-//declare an empty Marker, so we can clear the marker by accessing the setMap property
-var userLocationMarker = new google.maps.Marker();
+
 //callback this function when button clicked
 var getLocation = function() {
+  //declare an empty Marker, so we can clear the marker by accessing the setMap property
+  var userLocationMarker = new google.maps.Marker();
   //clear the map of markers before adding new one
   userLocationMarker.setMap(null);
   userLocationMarker = null;
@@ -278,5 +281,15 @@ function handleNoGeolocation(errorFlag) {
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
-window.onload = mapInit;
-// $('#court').click(mapInit());
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.id = "googleMap";
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+      '&signed_in=true&libraries=places&callback=init';
+  document.body.appendChild(script);
+}
+
+
+

@@ -15,22 +15,12 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-    <!-- import googleAPI -->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-    
   </head>
 <body ng-app="keepBallin">
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   <header ng-include="'templates/nav.html'"></header>
-  <div class="jumbotron">
-    <div class="greeting">
-      <h1>找場，找朋友，打球</h1>
-      <p class="lead">有這麼難嗎？</p>
-      <button type="button" class="btn btn-primary">走啊</button>
-    </div>
-  </div>
   <div class="container" ui-view></div>
   <footer ng-include="'templates/footer.html'"></footer>
 
@@ -68,6 +58,7 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
+    
     <!-- scroll.js hides navbar on up scroll -->
     <script src="scripts/scroll.js"></script>
     <!-- wowjs should be concat and minized later -->
@@ -80,7 +71,6 @@
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
     <script src="scripts/app.js"></script>
-    
 
 </body>
 </html>
