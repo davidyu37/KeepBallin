@@ -4,14 +4,17 @@
     <p class="lead">有這麼難嗎？</p>
     <button type="button" class="btn btn-primary">走啊</button>
   </div>
-  <div id="weatherBox"class="panel panel-primary" ng-controller="weatherController as weatherCtrl">
+  <div id="weatherBox"class="panel panel-primary" ng-controller="weatherController as wc">
     <span class="weatherLocation">
       <h2>台北</h2>
     </span>
     <button id="weatherTimeBtn" class="btn-primary pull-right">現在</button>
     <div class="panel-body">
-      <p id="temperature">{{weatherCtrl.now.main.temp}}&deg;C</p>
-      <p>{{weatherCtrl.now.weather[0].description}}</p>
+      <p id="temperature">{{wc.now.main.temp}}&deg;C</p>
+      <div class="weatherConditionBox">
+        <div id="weatherIcon" ng-include="wc.icon.where"></div>
+        <p id="weatherDescription">{{wc.now.weather[0].description}}</p>
+      </div>
     </div>
     </div>  
 </div>

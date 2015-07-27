@@ -10,8 +10,11 @@ $icon-font-path: '../fonts/';
 // theFooter
 @import "_footer.scss";
 
-// css for index.html
-@import "_index.scss";
+// css for home.html
+@import "_home.scss";
+
+// weatherIcon
+@import "_weatherIcon.scss";
 
 // animate.scss
 @import "_animate.scss";

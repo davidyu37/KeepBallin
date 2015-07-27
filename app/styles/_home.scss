@@ -2,9 +2,10 @@
 
 /* Main marketing message */
 .jumbotron {
+  width: 102%;
   text-align: center;
   .btn {
-    font-size: 21px;
+    font-size: 200%;
     padding: 14px 24px;
   }
   @media screen and (max-width: $screen-sm-min) {
@@ -39,30 +40,65 @@
   padding: 5px;
   text-align: center;
   border: none;
+  @media (min-width: $screen-sm-min) {
+    margin: 5px 10%;
+  }
 }
-
+/* weather location */
 .weatherLocation {
   position: absolute;
   left: 0;
-  top: -50px;
+  top: -90px;
   margin: 0 auto;
-  width: 100px;
+  width: 100%;
   height: 100px;
   border-radius: 50px;
+  @media (min-width: $screen-sm-min) {
+    left: -100px;
+    top: 15%;
+    width: 100px;
+    height: auto;
+
+  }
   h2 {
+    font-size: 500%;
     color: white;
     margin: 5px;
   }
 }
-
+/* A toggle button that let users switch between weather now and forecast*/
 #weatherTimeBtn {
   position: absolute;
   top: -45px;
   right: 0;
-  font-size: 20pt;
+  font-size: 100%;
 }
 
 #temperature {
-  font-size: 3.2em;
+  font-size: 400%;
   font-weight: bolder;
+  color: black;
+}
+/* This box includes weatherIcon and weatherDescription */
+.weatherConditionBox {
+  display: table;
+  width: 100%;
+  height: 100px;
+  p {
+    color: black;
+  }
+}
+#weatherIcon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  line-height: 0;  
+}
+
+#weatherDescription {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 200%;
+
 }
