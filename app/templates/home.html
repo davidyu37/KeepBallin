@@ -4,25 +4,30 @@
     <p class="lead">有這麼難嗎？</p>
     <button type="button" class="btn btn-primary">走啊</button>
   </div>
-  <div id="weatherBox"class="panel panel-primary" ng-controller="weatherController as wc">
+  
+</div>
+<div class="row">
+  <div class="leftContainer col-sm-12 col-md-6 col-lg-3">
+    <div id="weatherBox"class="panel panel-primary" ng-controller="weatherController as wc">
     <span class="weatherLocation">
       <h2>台北</h2>
     </span>
-    <button id="weatherTimeBtn" class="btn-primary pull-right">現在</button>
-    <div class="panel-body">
+    <button id="weatherTimeBtn" class="btn-primary pull-right now">現在</button>
+    <p class="dateDisplay">{{wc.time | date: "MM/dd/yyyy"}}</p>
+    <div id="weatherContent" class="panel-body">
+      <div class="timeDisplay">
+        <p>{{wc.time | date: "HH:mm"}}</p>
+        <p>{{wc.time | date: "ss"}}</p>
+      </div>
       <p id="temperature">{{wc.now.main.temp}}&deg;C</p>
       <div class="weatherConditionBox">
         <div id="weatherIcon" ng-include="wc.icon.where"></div>
         <p id="weatherDescription">{{wc.now.weather[0].description}}</p>
       </div>
     </div>
-    </div>  
-</div>
-<div class="row scrollEffect fadeInUp">
-  <div class="col-sm-6 col-md-3">
-    
+  </div>  
   </div>
-  <div class="col-lg-6">
+  <div class="col-sm-12 col-md-6 col-lg-6">
     <h4>HTML5 Boilerplate</h4>
     <p>
       HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.

@@ -14,6 +14,7 @@
     
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script></script>
     <!-- endbuild -->
   </head>
 <body ng-app="keepBallin">
@@ -21,7 +22,7 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   <header ng-include="'templates/nav.html'"></header>
-  <div class="container" ui-view></div>
+  <div ui-view></div>
   <footer ng-include="'templates/footer.html'"></footer>
 
     
@@ -38,9 +39,10 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-
     <!-- endbower -->
     <!-- endbuild -->
     
