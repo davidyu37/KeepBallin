@@ -70,6 +70,13 @@
   color: darken(#FFB35E, 10%);
   text-shadow: 0 0 5px #FFB35E;
   background: black;
+  position: relative;
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+  }
   p {
     margin: 0;
     &:nth-child(2) {
@@ -78,6 +85,32 @@
       margin-top: -70px;
       height: 160px;
     }  
+  }
+  ul {
+    text-align: left;
+    list-style: none;
+    padding-left: 10px;
+    li {
+      float: left;
+      padding: 10px;
+      text-shadow: none;
+      font-size: 30%;
+
+    }
+  }
+  div {
+    color: white;
+    float: left;
+    text-shadow: none;
+    padding-right: 10px;
+  }
+  span {
+    font-size: 50%;
+    text-shadow: none;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+
   }
 }
 
