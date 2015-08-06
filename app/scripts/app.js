@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('keepBallin', ['ui.router', 'weatherJS'])
+	var app = angular.module('keepBallin', ['ui.router', 'weatherJS', 'googleMap'])
 	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 		$urlRouterProvider.otherwise('/');
 		$stateProvider
@@ -10,7 +10,7 @@
 			.state('court', {
 				url: '/court',
 				templateUrl: 'templates/court.html',
-				onEnter: function() {loadScript()}
+				// onEnter: function() {loadScript()}
 			})
 			.state('event', {
 				url: '/event',

@@ -14,8 +14,19 @@
     
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
-    <script></script>
     <!-- endbuild -->
+    <!-- build:js scripts/vendor/jquery.js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/moment.js -->
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/angular.js -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbuild -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js"></script>
   </head>
 <body ng-app="keepBallin">
     <!--[if lt IE 10]>
@@ -35,17 +46,7 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script> -->
-
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/moment/moment.js"></script>
-    <script src="/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    
+ 
     <!-- build:js scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
@@ -60,21 +61,22 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
-    
+    <!-- build:js scripts/vendor/angular-google-maps.min.js -->
+    <script src="/bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
     <!-- scroll.js hides navbar on up scroll -->
     <script src="scripts/scroll.js"></script>
     <!-- wowjs should be concat and minized later -->
     <script src="scripts/wow.min.js"></script>
     <!-- js for googleMap -->
-    <script src="scripts/map.js"></script>
-    <!-- build:js scripts/weather.js -->
-    <!-- <script src="scripts/forecastWeather.js"></script> -->
-    <!-- build:js scripts/main.js -->
+    <!--<script src="scripts/map.js"></script>-->
     <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-    <!-- Angular start here -->
+    <!-- Angular starts here -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/weather.js"></script>
-
+    <script src="scripts/controller/weather.js"></script>
+    <script src="scripts/controller/map.js"></script>
+    <!-- endbuild -->
+    
 </body>
 </html>

@@ -35,7 +35,9 @@
 .leftContainer {
   background: #333;
   text-align: center;
-  height: 600px;
+  min-height: 100%;
+  padding: 60px;
+  margin-bottom: -5px;
 }
 
 /* weather display */
@@ -92,7 +94,7 @@
     padding-left: 10px;
     li {
       float: left;
-      padding: 10px;
+      padding: 10px 8px;
       text-shadow: none;
       font-size: 30%;
 
@@ -107,8 +109,9 @@
   span {
     font-size: 50%;
     text-shadow: none;
-    position: absolute;
-    top: 25px;
+    position: relative;
+    margin-left: 5px;
+    top: -10px;
     right: 15px;
 
   }
@@ -165,5 +168,10 @@
   display: table-cell;
   vertical-align: middle;
   font-size: 200%;
+}
+/* Weather stuff ends here */
 
+.brand-mission {
+  width: 50%;
+  margin: 15% auto;
 }

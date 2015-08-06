@@ -33,4 +33,6 @@ html, body {
   width: auto !important;
   overflow-x: hidden !important;
 }
+//Take out all blue border after clicking on button
+button:focus {outline:0;}
 

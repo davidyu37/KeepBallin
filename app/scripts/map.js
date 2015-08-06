@@ -1,3 +1,4 @@
+
 var map;
 
 //polyline coordinates for 大安區
@@ -172,7 +173,7 @@ function init() {
 
 	// place the search box on top of the map.(TOP_LEFT)
   	var input = document.getElementById('pac-input');
-  	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  	map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(input);
 
   	//connects the search box to google map's search box to allow autocomplete
   	var searchBox = new google.maps.places.SearchBox(input);
@@ -284,13 +285,17 @@ function handleNoGeolocation(errorFlag) {
 }
 
 function loadScript() {
-  var script = document.createElement('script');
-  script.id = "googleMap";
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
-      '&signed_in=true&libraries=places&callback=init';
-  document.body.appendChild(script);
+  var GM = document.getElementById('googleMap');
+  if (GM) {
+    return
+  } else {
+    var script = document.createElement('script');
+    script.id = "googleMap";
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+        '&signed_in=true&libraries=places&callback=init';
+    document.body.appendChild(script);
+  }
 }
-
 
 
