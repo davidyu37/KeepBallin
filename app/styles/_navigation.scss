@@ -47,17 +47,17 @@
 .navbar-inverse .navbar-nav > li > a {
   color: black;
   @media screen and (min-width: $screen-sm-min) {
-    height: 75px;
-    width: 125px;
-    font-size: 16pt;
+    padding-top: 20px;
+    height: 60px;
+    font-size: 150%;
     text-align: center;
-    padding-top: 30px;
+    
   }
   transition: 0.4s;
   &:hover {
     color: $brand-primary;
     background-color: white;
-    font-size: 20pt;
+    font-size: 200%;
     border-bottom: 10px solid $brand-primary;
     span {
       bottom: 0px;
@@ -89,7 +89,9 @@
 }
 
 /* Logo here */
-
+.navbar-brand {
+  padding-left: 0;
+}
 .logo {
   color: white;
   margin: 0;
@@ -103,9 +105,7 @@
   }
 }
 #desktopLogo {
-  position: absolute;
-  left: 15px;
-  top:  25px;
+  padding-left: 0;
   @media screen and (max-width: $screen-sm-min) {
     display: none;
   }

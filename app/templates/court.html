@@ -4,9 +4,15 @@
     ng-click="geolocate()">
     	<span class="glyphicon glyphicon-screenshot"></span>
     </button>
-    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
-         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
-    </div>
+    <div id="districtSelect" class="dropdown">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    選擇區域
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	    <li ng-repeat="district in districts"><a href="" ng-click="displayDistrict($event, district)">{{district.name}}</a></li>
+	  </ul>
+	</div>
 </div>
 <!--<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 <div id = "myMap"></div>

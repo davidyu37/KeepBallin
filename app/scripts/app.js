@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('keepBallin', ['ui.router', 'weatherJS', 'googleMap'])
+	var app = angular.module('keepBallin', ['ui.router','parallax', 'weatherJS', 'googleMap'])
 	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
 		$urlRouterProvider.otherwise('/');
 		$stateProvider

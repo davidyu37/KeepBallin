@@ -10,7 +10,7 @@
     border-top: 1px solid #ccc;
     padding-top: 10px;
 }
-
+/* Style for geolocate button */
 .geolocateBtn {
     margin-right: 18px;
     width: 50px;
@@ -26,7 +26,8 @@
     font-size: 200%;
     color: $brand-primary;       
 }
-
+/* Geolocate button ends here */
+/* Close button for panorama */
 .closeBtn {
     width: 50px;
     height: 50px;
@@ -37,59 +38,9 @@
     font-size: 200%;
     color: $brand-primary;
 }
+/* close button ends here */
 
-h2 {
-    margin-bottom:0;
-    margin-top: 0;
+/* District selection dropdown */
+#districtSelect {
+    margin-top: 80px;
 }
-/*.map {
-    width: 100%;
-    height: 100%;
-}
-
-
-#myMap {
-	width:100%;
-	height: 100vh;
-}
-
-.controls {
-    margin-top: 100px;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    height: 32px;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-#pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 30%;
-}
-
-#pac-input:focus {
-    border-color: #4d90fe;
-}
-
-.pac-container {
-    font-family: Roboto;
-}
-/*css for locateButton*/
-/*.Btn {
-	margin-top: 100px;
-    width: 100px;
-    height: 32px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #FFF;
-    box-shadow: 5px 8px 5px rgba(0, 0, 0, 0.3);
-    background-color: red;
-    border: none;
-    border-radius: 0 100px 100px 0;
-}*/

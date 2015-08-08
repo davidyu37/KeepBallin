@@ -1,39 +1,89 @@
 (function(){
 	//Data
-	var courts = [
-	    {
-	        court : '台北科技大學',
-	        desc : 'This is the best court in the world!',
-	        lat : 25.043204,
-	        long : 121.537544
-	    },
-	    {
-	        court : '仁愛國中',
-	        desc : 'This court is aiiiiite!',
-	        lat : 25.036629,
-	        long : 121.550943
-	    },
-	    {
-	        court : '懷生國中',
-	        desc : 'This is the second best court in the world!',
-	        lat : 25.040370,
-	        long : 121.540789
-	    },
-	    {
-	        court : '師大附中',
-	        desc : 'This court is live!',
-	        lat : 25.035833,
-	        long : 121.540549
-	    },
-	    {
-	        court : '延平中學',
-	        desc : 'Sin court...\'nuff said!',
-	        lat : 25.036516,
-	        long : 121.538686
-	    }
+	var districts = [
+		{
+			name: '北投區',
+			courts: []
+		},
+		{
+			name: '士林區',
+			courts: []
+		},
+		{
+			name: '內湖區',
+			courts: []
+		},
+		{
+			name: '中山區',
+			courts: []
+		},
+		{
+			name: '大同區',
+			courts: []
+		},
+		{
+			name: '松山區',
+			courts: []	
+		},
+		{
+			name: '萬華區',
+			courts: []	
+		},
+		{
+			name: '中正區',
+			courts: []	
+		},
+		{
+			name: '大安區',
+			courts: [
+			    {
+			        court : '台北科技大學',
+			        desc : 'This is the best court in the world!',
+			        lat : 25.043204,
+			        long : 121.537544
+			    },
+			    {
+			        court : '仁愛國中',
+			        desc : 'This court is aiiiiite!',
+			        lat : 25.036629,
+			        long : 121.550943
+			    },
+			    {
+			        court : '懷生國中',
+			        desc : 'This is the second best court in the world!',
+			        lat : 25.040370,
+			        long : 121.540789
+			    },
+			    {
+			        court : '師大附中',
+			        desc : 'This court is live!',
+			        lat : 25.035833,
+			        long : 121.540549
+			    },
+			    {
+			        court : '延平中學',
+			        desc : 'Sin court...\'nuff said!',
+			        lat : 25.036516,
+			        long : 121.538686
+			    }
+			]
+		},
+		{
+			name: '信義區',
+			courts: []	
+		},
+		{
+			name: '南港區',
+			courts: []	
+		},
+		{
+			name: '文山區',
+			courts: []	
+		}
 	];
-	var m1 = angular.module('googleMap', ['uiGmapgoogle-maps']);
-	m1.controller('MapCtrl', function ($scope) {
+	
+	var m1 = angular.module('googleMap', []);
+	m1.controller('MapCtrl', ['$scope', function ($scope) {
 
 		var initialPos = new google.maps.LatLng(25.033259, 121.543565);
 
@@ -105,10 +155,13 @@
 		    	//Remove button from control
 		    	$scope.map.streetView.controls[google.maps.ControlPosition.RIGHT_CENTER].pop();
 		    }
-
 		});
-	    
 	    //Panorama ends here
+
+	    $scope.districts = districts;
+
+	    console.log($scope.districts);
+	    
 	    $scope.markers = [];
 
 	    $scope.userLocation = {};
@@ -130,18 +183,17 @@
 	            $scope.map.panTo({lat: info.lat, lng: info.long});
 	        });
 	        
-	        $scope.markers.push(marker);
-	        
-	    }  
+	        $scope.markers.push(marker);    
+	    }
 	    
-	    for (i = 0; i < courts.length; i++){
-	        createMarker(courts[i]);
-	    }
+	    // for (i = 0; i < courts.length; i++){
+	    //     createMarker(courts[i]);
+	    // }
 
-	    $scope.openInfoWindow = function(e, selectedMarker){
-	        e.preventDefault();
-	        google.maps.event.trigger(selectedMarker, 'click');
-	    }
+	    // $scope.openInfoWindow = function(e, selectedMarker){
+	    //     e.preventDefault();
+	    //     google.maps.event.trigger(selectedMarker, 'click');
+	    // }
 	    
 	    // Place geolocate button on map
 	    var btn = document.getElementById('geolocate');
@@ -198,7 +250,22 @@
 		  var infowindow = new google.maps.InfoWindow(options);
 		  $scope.map.setCenter(options.position);
 		}
-    });//mapCtrl ends here
+		// Place district selection dropdown on map
+		var districtSelection = document.getElementById('districtSelect');
+		$scope.map.controls[google.maps.ControlPosition.TOP_CENTER].push(districtSelection);
+		//Fire displayDistrict() after the user clicks on the desired district
+		$scope.displayDistrict = function(e, selectedDistrict){
+			//e is the event that a tag triggers
+			e.preventDefault();
+			//selectedDistrict is the object that all the information about that district
+			//Make markers for all the courts inside of the 
+			for (i = 0; i < selectedDistrict.courts.length; i++){
+	        	createMarker(selectedDistrict.courts[i]);
+	    	}
+			// createMarker();
+		};
+
+    }]);//mapCtrl ends here
 
 
 })();//self enclosing function ends here
